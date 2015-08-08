@@ -22,7 +22,7 @@ Assumptions:
 * Step #1 - Read data from household_power_consumption.txt file
 * Step #2 - Select the subsets that match the dates "1/2/2007" and "2/2/2007"
 * Step #3 - Create a new variable "fulldatetime" that combines Date and Time.
-* Step #4 - The resulting variable type for "fulldatetime" was (chr). We need to change to "POSIXlt"
+* Step #4 - The resulting variable type for "fulldatetime" was (chr). Need to change to "POSIXlt"
 * Step #5 - Rename columns of the dataset and change their order, so the new variable "fulldatetime" appears right after Date & Time.
 * Step #6 - Create plot(s)
 * Step #7 - Save the plot(s) to a PNG file with width = 480 and height = 480. Making sure to close the PNG device.
