@@ -52,7 +52,7 @@ newdataset$fulldatetime <- paste(newdataset$Date, newdataset$Time, sep = " ");
 ## We need to change to "POSIXlt"
 newdataset$fulldatetime <- strptime(newdataset$fulldatetime, "%d/%m/%Y %H:%M:%S")
 
-## Step #5 - I would like to rename the columns of the dataset and change their order
+## Step #5 - Rename the columns of the dataset and change their order
 newdataset <- select(newdataset, date = Date, time = Time, fulldatetime, activepwr = Global_active_power, reactivepwr = Global_reactive_power, voltage = Voltage, intensity = Global_intensity, sub1 = Sub_metering_1, sub2 = Sub_metering_2, sub3 = Sub_metering_3)
 
 ## Step #6 - Create the plot - In this case a Histogram
