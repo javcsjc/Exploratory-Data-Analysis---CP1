@@ -55,19 +55,6 @@ newdataset$fulldatetime <- strptime(newdataset$fulldatetime, "%d/%m/%Y %H:%M:%S"
 ## Step #5 - I would like to rename the columns of the dataset and change their order
 newdataset <- select(newdataset, date = Date, time = Time, fulldatetime, activepwr = Global_active_power, reactivepwr = Global_reactive_power, voltage = Voltage, intensity = Global_intensity, sub1 = Sub_metering_1, sub2 = Sub_metering_2, sub3 = Sub_metering_3)
 
-## New Order is:
-## date: (chr) Date in format dd/mm/yyyy
-## time: (chr) Time in format hh:mm:ss
-## fulldatetime: (POSIXlt) Date and time in the format yyyy-mm-dd hh:mm:ss
-## activepwr: (num) household global minute-averaged active power (in kilowatt)
-## reactivepwr: (num) household global minute-averaged reactive power (in kilowatt)
-## voltage: (num) minute-averaged voltage (in volt)
-## intensity: (num) household global minute-averaged current intensity (in ampere)
-## sub1: (num) energy sub-metering No. 1 (in watt-hour of active energy). It corresponds to the kitchen, containing mainly a dishwasher, an oven and a microwave (hot plates are not electric but gas powered).
-## sub2: (num) energy sub-metering No. 2 (in watt-hour of active energy). It corresponds to the laundry room, containing a washing-machine, a tumble-drier, a refrigerator and a light.
-## sub3: (num) energy sub-metering No. 3 (in watt-hour of active energy). It corresponds to an electric water-heater and an air-conditioner.
-
-
 ## Step #6 - Create the plot - In this case a Histogram
 hist(newdataset$activepwr, col = "red", main="Global Active Power", xlab="Global Active Power (kilowatts)", ylab= "Frequency")
 
