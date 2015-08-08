@@ -27,7 +27,7 @@ Assumptions:
 * Step #4 - The resulting variable type for "fulldatetime" was (chr). We need to change to "POSIXlt"
 * Step #5 - Rename columns of the dataset and change their order, so the new variable "fulldatetime" appears right after Date & Time.
 * Step #6 - Create plot(s)
-* Step #7 - Save the plot(s) to a PNG file with Width = 480 and Height = 480
+* Step #7 - Save the plot(s) to a PNG file with Width = 480 and Height = 480. Making sure to close the PNG device.
 
 ## Variable names and order of new data set:
 * date: (chr) Date in format dd/mm/yyyy
@@ -41,10 +41,3 @@ Assumptions:
 * sub2: (num) energy sub-metering No. 2 (in watt-hour of active energy). It corresponds to the laundry room, containing a washing-machine, a tumble-drier, a refrigerator and a light.
 * sub3: (num) energy sub-metering No. 3 (in watt-hour of active energy). It corresponds to an electric water-heater and an air-conditioner.
 
-
-## Step #6 - Create the plot - In this case a Histogram
-hist(newdataset$activepwr, col = "red", main="Global Active Power", xlab="Global Active Power (kilowatts)", ylab= "Frequency")
-
-## Step #7 - Save the plot to a PNG file with a width of 480 pixels and a height of 480 pixels.
-dev.copy(png, file="plot1.png", width = 480, height = 480) # Copy my plot to a PNG file 
-dev.off() ## Closing the PNG device
