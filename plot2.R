@@ -11,7 +11,8 @@
 ## For each plot you should
 ## 1.- Construct the plot and save it to a PNG file with a width of 480 pixels and a height of 480 pixels.
 ## 2.- Name each of the plot files as plot1.png, plot2.png, etc.
-## 3.- Create a separate R code file (plot1.R, plot2.R, etc.) that constructs the corresponding plot, i.e. code in plot1.R constructs the plot1.png plot. 
+## 3.- Create a separate R code file (plot1.R, plot2.R, etc.) that constructs the corresponding plot.
+##     i.e. code in plot1.R constructs the plot1.png plot. 
 ##     Your code file should include code for reading the data so that the plot can be fully reproduced.
 ##     You must also include the code that creates the PNG file.
 ## 4.- Add the PNG file and R code file to the top-level folder of your git repository (no need for separate sub-folders)
@@ -54,19 +55,6 @@ newdataset$fulldatetime <- strptime(newdataset$fulldatetime, "%d/%m/%Y %H:%M:%S"
 ## Step #5 - I would like to rename the columns of the dataset and change their order
 newdataset <- select(newdataset, date = Date, time = Time, fulldatetime, activepwr = Global_active_power, reactivepwr = Global_reactive_power, voltage = Voltage, intensity = Global_intensity, sub1 = Sub_metering_1, sub2 = Sub_metering_2, sub3 = Sub_metering_3)
 
-## New Order is:
-## date: (chr) Date in format dd/mm/yyyy
-## time: (chr) Time in format hh:mm:ss
-## fulldatetime: (POSIXlt) Date and time in the format yyyy-mm-dd hh:mm:ss
-## activepwr: (num) household global minute-averaged active power (in kilowatt)
-## reactivepwr: (num) household global minute-averaged reactive power (in kilowatt)
-## voltage: (num) minute-averaged voltage (in volt)
-## intensity: (num) household global minute-averaged current intensity (in ampere)
-## sub1: (num) energy sub-metering No. 1 (in watt-hour of active energy). It corresponds to the kitchen, containing mainly a dishwasher, an oven and a microwave (hot plates are not electric but gas powered).
-## sub2: (num) energy sub-metering No. 2 (in watt-hour of active energy). It corresponds to the laundry room, containing a washing-machine, a tumble-drier, a refrigerator and a light.
-## sub3: (num) energy sub-metering No. 3 (in watt-hour of active energy). It corresponds to an electric water-heater and an air-conditioner.
-
-
 ## Step #6 - Create the plot
 plot(newdataset$fulldatetime, newdataset$activepwr, type="n", xlab = "", ylab= "Global Active Power (kilowatts)")## Creating an empty plot
 lines(newdataset$fulldatetime, newdataset$activepwr, col="black", pch = "|") ## Adding the line for Global Active Power
@@ -74,4 +62,3 @@ lines(newdataset$fulldatetime, newdataset$activepwr, col="black", pch = "|") ## 
 ## Step #7 - Save the plot to a PNG file with a width of 480 pixels and a height of 480 pixels.
 dev.copy(png, file="plot2.png", width = 480, height = 480) # Copy my plot to a PNG file 
 dev.off() ## Closing the PNG device
-
