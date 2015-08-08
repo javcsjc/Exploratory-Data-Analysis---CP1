@@ -56,8 +56,7 @@ newdataset$fulldatetime <- strptime(newdataset$fulldatetime, "%d/%m/%Y %H:%M:%S"
 newdataset <- select(newdataset, date = Date, time = Time, fulldatetime, activepwr = Global_active_power, reactivepwr = Global_reactive_power, voltage = Voltage, intensity = Global_intensity, sub1 = Sub_metering_1, sub2 = Sub_metering_2, sub3 = Sub_metering_3)
 
 ## Step #6 - Create the plot
-plot(newdataset$fulldatetime, newdataset$activepwr, type="n", xlab = "", ylab= "Global Active Power (kilowatts)")## Creating an empty plot
-lines(newdataset$fulldatetime, newdataset$activepwr, col="black", pch = "|") ## Adding the line for Global Active Power
+plot(newdataset$fulldatetime, newdataset$activepwr, type="l", xlab = "", ylab= "Global Active Power (kilowatts)")
 
 ## Step #7 - Save the plot to a PNG file with a width of 480 pixels and a height of 480 pixels.
 dev.copy(png, file="plot2.png", width = 480, height = 480) # Copy my plot to a PNG file 
