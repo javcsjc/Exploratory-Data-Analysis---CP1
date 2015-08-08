@@ -3,9 +3,7 @@ Data Science Specialization - Coursera
 
 Original Dataset: https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip
 
-Project Objectives:
-
-For each plot you should
+Project Objectives: For each plot you should
 * Construct the plot and save it to a PNG file with a width of 480 pixels and a height of 480 pixels.
 * Name each of the plot files as plot1.png, plot2.png, etc.
 * Create a separate R code file (plot1.R, plot2.R, etc.) that constructs the corresponding plot, i.e. code in plot1.R constructs the plot1.png plot. 
@@ -27,7 +25,7 @@ Assumptions:
 * Step #4 - The resulting variable type for "fulldatetime" was (chr). We need to change to "POSIXlt"
 * Step #5 - Rename columns of the dataset and change their order, so the new variable "fulldatetime" appears right after Date & Time.
 * Step #6 - Create plot(s)
-* Step #7 - Save the plot(s) to a PNG file with Width = 480 and Height = 480. Making sure to close the PNG device.
+* Step #7 - Save the plot(s) to a PNG file with width = 480 and height = 480. Making sure to close the PNG device.
 
 ## Variable names and order of new data set:
 * date: (chr) Date in format dd/mm/yyyy
