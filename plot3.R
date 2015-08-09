@@ -57,9 +57,9 @@ newdataset <- select(newdataset, date = Date, time = Time, fulldatetime, activep
 
 ## Step #6 - Create the plot
 plot(newdataset$fulldatetime, newdataset$sub1, type= "n", xlab=" ", ylab="Energy sub metering") ## Creating an empty plot
-lines(newdataset$fulldatetime, newdataset$sub1, col="black", pch = "|") ## Adding the line for Sub_metering_1
-lines(newdataset$fulldatetime, newdataset$sub2, col="red", pch = "|") ## Adding the line for Sub_metering_2
-lines(newdataset$fulldatetime, newdataset$sub3, col="blue", pch = "|") ## Adding the line for Sub_metering_3
+lines(newdataset$fulldatetime, newdataset$sub1, col="black") ## Adding the line for Sub_metering_1
+lines(newdataset$fulldatetime, newdataset$sub2, col="red") ## Adding the line for Sub_metering_2
+lines(newdataset$fulldatetime, newdataset$sub3, col="blue") ## Adding the line for Sub_metering_3
 
 ## Here we add the legends on the topright area of the plot
 legend("topright", pch = "-", col=c("black", "red", "blue"), cex= 0.8, bty="n", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
